@@ -1,0 +1,16 @@
+name: terraform-cloudflare-workers
+repo_url: https://github.com/rafalmasiarek/terraform-cloudflare-workers
+license: MIT
+
+context:
+  - "## About"
+  - Terraform module to provision a [CloudFlare workers](https://developers.cloudflare.com/workers/).
+
+includes:
+  - docs/terraform.md
+
+authors:
+  - name: Rafał Masiarek
+    email: rafal@masiarek.pl
+    github: rafalmasiarek
+    website: https://masiarek.pl

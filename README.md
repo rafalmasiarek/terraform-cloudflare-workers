@@ -4,30 +4,9 @@
 Terraform module to provision a [CloudFlare workers](https://developers.cloudflare.com/workers/).
 
 
-## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-```text
-The MIT License (MIT)
+## Terraform Reference
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files, to deal in the Software
-without restriction.
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
-
-Source: https://opensource.org/licenses/MIT
-```
-See [LICENSE](LICENSE) for full details.
-## Authors
-
-- Rafał Masiarek | [website](https://masiarek.pl) | [email](mailto:rafal@masiarek.pl) | [github](https://github.com/rafalmasiarek)
-
-
-<!-- BEGIN_TF_DOCS -->
 
 
 ### Requirements
@@ -83,39 +62,30 @@ No modules.
 | <a name="output_id"></a> [id](#output\_id) | Cloudflare Worker script ID returned by the provider in API deployment mode, or null in Wrangler deployment mode. |
 | <a name="output_name"></a> [name](#output\_name) | Name of the deployed Cloudflare Worker script. |
 
-### Examples
+## License
 
-```hcl
-module "worker_api" {
-  source = "../.."
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  account_id         = var.account_id
-  name               = var.worker_name
-  compatibility_date = "2025-01-15"
+```text
+The MIT License (MIT)
 
-  content_file = "${path.module}/worker.js"
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files, to deal in the Software
+without restriction.
 
-  workers_dev          = true
-  preview_urls_enabled = false
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-  plain_text_bindings = {
-    ENVIRONMENT = "example"
-    APP_NAME    = "demo-worker"
-  }
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
-  json_bindings = {
-    APP_CONFIG = {
-      app_name = "demo"
-      debug    = true
-      features = ["api", "metrics"]
-    }
-  }
-
-  routes        = []
-  cron_triggers = []
-}
+Source: https://opensource.org/licenses/MIT
 ```
-<!-- END_TF_DOCS -->
+
+
+See [LICENSE](LICENSE) for full details.
+## Authors
+
+- Rafał Masiarek | [website](https://masiarek.pl) | [email](mailto:rafal@masiarek.pl) | [github](https://github.com/rafalmasiarek)
 
 
 <!-- references -->

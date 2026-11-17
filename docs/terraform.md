@@ -1,4 +1,5 @@
-<!-- BEGIN_TF_DOCS -->
+## Terraform Reference
+
 
 
 ### Requirements
@@ -53,37 +54,3 @@ No modules.
 | <a name="output_deployment_mode"></a> [deployment\_mode](#output\_deployment\_mode) | Deployment mode selected by the module: 'api', 'wrangler', or 'invalid'. |
 | <a name="output_id"></a> [id](#output\_id) | Cloudflare Worker script ID returned by the provider in API deployment mode, or null in Wrangler deployment mode. |
 | <a name="output_name"></a> [name](#output\_name) | Name of the deployed Cloudflare Worker script. |
-
-### Examples
-
-```hcl
-module "worker_api" {
-  source = "../.."
-
-  account_id         = var.account_id
-  name               = var.worker_name
-  compatibility_date = "2025-01-15"
-
-  content_file = "${path.module}/worker.js"
-
-  workers_dev          = true
-  preview_urls_enabled = false
-
-  plain_text_bindings = {
-    ENVIRONMENT = "example"
-    APP_NAME    = "demo-worker"
-  }
-
-  json_bindings = {
-    APP_CONFIG = {
-      app_name = "demo"
-      debug    = true
-      features = ["api", "metrics"]
-    }
-  }
-
-  routes        = []
-  cron_triggers = []
-}
-```
-<!-- END_TF_DOCS -->

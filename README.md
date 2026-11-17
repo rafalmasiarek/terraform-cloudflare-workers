@@ -28,7 +28,6 @@ See [LICENSE](LICENSE) for full details.
 
 
 <!-- BEGIN_TF_DOCS -->
-## Documentation
 
 
 ### Requirements
@@ -62,13 +61,13 @@ No modules.
 | <a name="input_compatibility_date"></a> [compatibility\_date](#input\_compatibility\_date) | Compatibility date for the Worker runtime in YYYY-MM-DD format. | `string` | n/a | yes |
 | <a name="input_content_file"></a> [content\_file](#input\_content\_file) | Path to the built Worker entry file. Use this for provider/API deployment mode. | `string` | `null` | no |
 | <a name="input_cron_triggers"></a> [cron\_triggers](#input\_cron\_triggers) | List of cron schedule expressions to configure for the Worker in API deployment mode. | `list(string)` | `[]` | no |
-| <a name="input_d1_bindings"></a> [d1\_bindings](#input\_d1\_bindings) | List of D1 database bindings to attach to the Worker. | <pre>list(object({<br>    name        = string<br>    database_id = string<br>  }))</pre> | `[]` | no |
+| <a name="input_d1_bindings"></a> [d1\_bindings](#input\_d1\_bindings) | List of D1 database bindings to attach to the Worker. | <pre>list(object({<br/>    name        = string<br/>    database_id = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_json_bindings"></a> [json\_bindings](#input\_json\_bindings) | Map of JSON bindings exposed to the Worker. | `map(any)` | `{}` | no |
-| <a name="input_kv_namespace_bindings"></a> [kv\_namespace\_bindings](#input\_kv\_namespace\_bindings) | List of KV namespace bindings to attach to the Worker. | <pre>list(object({<br>    name         = string<br>    namespace_id = string<br>  }))</pre> | `[]` | no |
+| <a name="input_kv_namespace_bindings"></a> [kv\_namespace\_bindings](#input\_kv\_namespace\_bindings) | List of KV namespace bindings to attach to the Worker. | <pre>list(object({<br/>    name         = string<br/>    namespace_id = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the Cloudflare Worker script. | `string` | n/a | yes |
 | <a name="input_plain_text_bindings"></a> [plain\_text\_bindings](#input\_plain\_text\_bindings) | Map of plain text bindings exposed to the Worker as text variables. | `map(string)` | `{}` | no |
 | <a name="input_preview_urls_enabled"></a> [preview\_urls\_enabled](#input\_preview\_urls\_enabled) | Whether to enable preview URLs for the Worker in API deployment mode. | `bool` | `false` | no |
-| <a name="input_routes"></a> [routes](#input\_routes) | List of route definitions to attach to the Worker in API deployment mode. | <pre>list(object({<br>    zone_id = string<br>    pattern = string<br>    enabled = optional(bool, true)<br>  }))</pre> | `[]` | no |
+| <a name="input_routes"></a> [routes](#input\_routes) | List of route definitions to attach to the Worker in API deployment mode. | <pre>list(object({<br/>    zone_id = string<br/>    pattern = string<br/>    enabled = optional(bool, true)<br/>  }))</pre> | `[]` | no |
 | <a name="input_run_triggers_deploy"></a> [run\_triggers\_deploy](#input\_run\_triggers\_deploy) | Whether to run 'wrangler triggers deploy' after 'wrangler deploy' in Wrangler deployment mode. | `bool` | `true` | no |
 | <a name="input_secret_text_bindings"></a> [secret\_text\_bindings](#input\_secret\_text\_bindings) | Map of secret text bindings to attach to the Worker. In Wrangler mode, these are uploaded with 'wrangler secret put'. | `map(string)` | `{}` | no |
 | <a name="input_worker_dir"></a> [worker\_dir](#input\_worker\_dir) | Path to the Wrangler project directory containing the Wrangler configuration file. Use this for Wrangler deployment mode. | `string` | `null` | no |
@@ -116,10 +115,9 @@ module "worker_api" {
   cron_triggers = []
 }
 ```
-
 <!-- END_TF_DOCS -->
 
 
 <!-- references -->
 
-[repo_link]: https://github.com/Infrastrukturait/terraform-cloudflare-workers
+[repo_link]: https://github.com/rafalmasiarek/terraform-cloudflare-workers
